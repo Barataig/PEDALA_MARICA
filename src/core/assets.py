@@ -31,10 +31,41 @@ class FolhaPersonagem:
         return self._quadros[(direcao, andando)][int(tempo / passo) % 4]
 
 
+class FolhaBicicleta:
+    """Folhas lateral (2 quadros) e frontal/traseira (4 quadros por direção)."""
+
+    def __init__(self, lateral, vertical):
+        self._lateral = []
+        for coluna in range(2):
+            quadro = pygame.transform.scale(
+                lateral.subsurface(pygame.Rect(coluna * 32, 0, 32, 20)),
+                (TILE, TILE * 5 // 8))
+            self._lateral.append((quadro, pygame.transform.flip(quadro, True, False)))
+        self._vertical = {
+            Direcao.CIMA: [
+                vertical.subsurface(pygame.Rect(coluna * 48, 0, 48, 64))
+                for coluna in range(4)
+            ],
+            Direcao.BAIXO: [
+                vertical.subsurface(pygame.Rect(coluna * 48, 64, 48, 64))
+                for coluna in range(4)
+            ],
+        }
+
+    def quadro(self, andando, tempo, direcao):
+        if direcao in self._vertical:
+            indice = int(tempo / QUADROS_ANDANDO) % 4 if andando else 0
+            return self._vertical[direcao][indice]
+        indice = int(tempo / QUADROS_ANDANDO) % 2 if andando else 0
+        lado = 1 if direcao == Direcao.ESQUERDA else 0
+        return self._lateral[indice][lado]
+
+
 class Recursos:
     def __init__(self, raiz=ASSETS):
         self.raiz = raiz
         self._imagens, self._folhas = {}, {}
+        self._bicicleta = None
 
     def imagem(self, relativo):
         if relativo not in self._imagens:
@@ -50,6 +81,13 @@ class Recursos:
         if chave not in self._folhas:
             self._folhas[chave] = FolhaPersonagem(self.imagem(f"personagens/{arquivo}"), tom)
         return self._folhas[chave]
+
+    def bicicleta(self):
+        if self._bicicleta is None:
+            self._bicicleta = FolhaBicicleta(
+                self.imagem("bike/bike_color.png"),
+                self.imagem("bike/bike_vertical.png"))
+        return self._bicicleta
 
     def terreno(self, nome):
         """Devolve {(coluna, linha): Surface} da folha 4x4 de 'grama' ou 'areia'."""
