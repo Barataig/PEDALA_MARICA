@@ -5,7 +5,7 @@ import pygame
 
 from src.core.assets import Recursos
 from src.core.config import ALTURA, FPS, LARGURA, TITULO, WEB
-from src.scenes.mundo import CenaMundo
+from src.scenes.titulo import CenaTitulo
 
 
 class Game:
@@ -15,7 +15,7 @@ class Game:
         self.tela = pygame.display.set_mode((LARGURA, ALTURA))
         self.relogio = pygame.time.Clock()
         self.recursos = Recursos()
-        self.cena = CenaMundo(self)
+        self.cena = CenaTitulo(self)    # o mundo é criado ao apertar JOGAR
         self.rodando = True
 
     async def executar(self):
