@@ -39,7 +39,7 @@ class DesafioUI:
         self.sel = 0
         self.fim = self.d.terminou
 
-    def _linhas(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=26):
+    def _linhas(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=28):
         fonte = fonte or self.f
         for l in linhas:
             tela.blit(fonte.render(l, True, cor), (x, y))
@@ -59,7 +59,7 @@ class DesafioUI:
         if not self.fim:
             for i, op in enumerate(d.opcoes()):
                 linhas = quebrar(f"{i + 1}. {op}", self.f, 820)
-                h = 16 + 26 * len(linhas)
+                h = 16 + 28 * len(linhas)
                 caixa = pygame.Rect(48, y, 864, h)
                 pygame.draw.rect(tela, (40, 66, 90) if i == self.sel else PAINEL, caixa, border_radius=8)
                 pygame.draw.rect(tela, DESTAQUE if i == self.sel else (110, 130, 150), caixa, 3, border_radius=8)

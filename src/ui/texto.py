@@ -1,4 +1,18 @@
-"""Quebra de texto em linhas (aceita qualquer objeto com .size(str) -> (w, h))."""
+"""Quebra de texto em linhas e carregamento de fontes com bom suporte tipográfico."""
+import pygame
+
+
+def carregar_fonte(tamanho, negrito=False):
+    """Carrega fonte do sistema com bom kerning para português (acentos) ou fallback seguro."""
+    preferencias = ["segoeui", "arial", "helvetica", "dejavusans", "sans-serif"]
+    for nome in preferencias:
+        try:
+            f = pygame.font.SysFont(nome, tamanho, bold=negrito)
+            if f:
+                return f
+        except Exception:
+            pass
+    return pygame.font.Font(None, tamanho)
 
 
 def quebrar(texto, fonte, largura):

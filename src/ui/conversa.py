@@ -112,7 +112,7 @@ class Conversa:
             pygame.draw.rect(tela, DESTAQUE, (x, y, img.get_width() + 24, 36), border_radius=8)
             tela.blit(img, (x + 12, y + 8))
 
-    def _texto(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=26):
+    def _texto(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=28):
         fonte = fonte or self.f
         for l in linhas:
             tela.blit(fonte.render(l, True, cor), (x, y))
@@ -130,11 +130,11 @@ class Conversa:
         if self._linhas is None:
             self._linhas = quebrar(it["texto"], self.f, 860)
         restante = int(self.t * CARACTERES_POR_SEGUNDO)
-        y = 478
+        y = 472
         for l in self._linhas[:5]:
             tela.blit(self.f.render(l[:max(restante, 0)], True, BORDA), (48, y))
             restante -= len(l) + 1
-            y += 26
+            y += 28
         if restante > 0:    # terminou de digitar: setinha de "continuar"
             pygame.draw.polygon(tela, DESTAQUE, [(900, 592), (916, 592), (908, 604)])
 
@@ -145,7 +145,7 @@ class Conversa:
         if self.resultado is None:
             for i, op in enumerate(it["opcoes"]):
                 linhas = quebrar(f"{i + 1}. {op}", self.f, 820)
-                h = 16 + 26 * len(linhas)
+                h = 16 + 28 * len(linhas)
                 caixa = pygame.Rect(48, y, 864, h)
                 oculta = i in self.ocultas
                 pygame.draw.rect(tela, (40, 66, 90) if i == self.sel else PAINEL, caixa, border_radius=8)
