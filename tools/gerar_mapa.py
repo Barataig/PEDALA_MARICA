@@ -22,10 +22,64 @@ def agua(c0, c1, r0, r1):
             g[r][c] = "A"
 
 
-for c0 in (19, 43):                       # dois canais cortam a ilha; sobra um corredor (linhas 15-18)
+for c0 in (19, 43):                       # canais com travessias controladas na linha central
     agua(c0, c0 + 4, 0, 14)
     agua(c0, c0 + 4, 19, 33)
-agua(27, 38, 8, 20)                       # lagoa central
+contorno_lagoa = {
+    7: (30, 35), 8: (28, 37), 9: (27, 38), 10: (27, 39),
+    11: (26, 39), 12: (26, 39), 13: (26, 39), 14: (27, 39),
+    15: (27, 38), 16: (28, 38), 17: (28, 37), 18: (29, 36),
+    19: (31, 35),
+}
+for r, (c0, c1) in contorno_lagoa.items():
+    agua(c0, c1, r, r)
+
+
+def trilha(pontos):
+    """Marca caminhos de areia entre pontos, sem cobrir água ou canais."""
+    celulas = set()
+
+    def marcar(c, r):
+        if g[r][c] == "G":
+            g[r][c] = "S"
+        if g[r][c] == "S":
+            celulas.add((c, r))
+
+    for (c0, r0), (c1, r1) in zip(pontos, pontos[1:]):
+        while c0 != c1:
+            marcar(c0, r0)
+            c0 += 1 if c1 > c0 else -1
+        while r0 != r1:
+            marcar(c0, r0)
+            r0 += 1 if r1 > r0 else -1
+        marcar(c1, r1)
+    return celulas
+
+
+# Travessia principal e caminhos locais: a lagoa é contornada pelo sul.
+trilha([(3, 17), (18, 17), (24, 17), (24, 22), (41, 22), (41, 17), (61, 17)])
+trilha([(9, 19), (10, 17), (10, 12), (14, 9), (14, 5)])
+trilha([(4, 11), (7, 11), (7, 17)])
+orla = trilha([(25, 8), (25, 21), (27, 22), (39, 22), (41, 20), (41, 8)])
+trilha_espraiado = trilha([(34, 27), (36, 24), (36, 21), (39, 19), (40, 17), (40, 13), (37, 10), (37, 6)])
+ruas_centro = set()
+for r in (10, 16, 23):
+    ruas_centro.update(trilha([(48, r), (61, r)]))
+for c in (49, 55, 60):
+    ruas_centro.update(trilha([(c, 5), (c, 29)]))
+morros_espraiado = {
+    (c, r)
+    for c, r in (
+        (35, 4), (36, 4), (37, 4), (38, 4),
+        (34, 5), (35, 5), (36, 5), (37, 5),
+        (40, 7), (41, 7), (40, 8),
+        (35, 25), (36, 25), (37, 25),
+        (34, 26), (35, 26), (36, 26), (37, 26), (38, 26),
+        (35, 27), (36, 27), (37, 27),
+        (40, 28), (41, 28), (40, 29),
+    )
+}
+
 costa = [(r, c) for r in range(H) for c in range(W) if g[r][c] == "G" and any(
     not (0 <= r + dr < H and 0 <= c + dc < W) or g[r + dr][c + dc] == "A"
     for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)))]
@@ -110,17 +164,20 @@ POIS = [
      "texto": "O prédio do Museu Histórico já foi a Casa de Câmara e Cadeia, no tempo colonial."},
     {"id": "colonia", "col": 53, "linha": 25, "titulo": "Pedra da Colônia", "curiosidade": True,
      "texto": "Os pescadores artesanais de Maricá se organizam na Colônia de Pescadores Z-7 para defender sua tradição."},
-    {"id": "lagoa", "col": 27, "linha": 12, "titulo": "Lagoa de Maricá", "curiosidade": True,
+    {"id": "lagoa", "col": 25, "linha": 12, "titulo": "Lagoa de Maricá", "curiosidade": True,
      "texto": "O Sistema Lagunar Maricá-Guarapina reúne as lagoas Brava, de Maricá, da Barra, do Padre e Guarapina: águas salobras, entre o rio e o mar."},
     {"id": "mar_ponta", "col": 8, "linha": 31, "titulo": "O mar de Ponta Negra", "curiosidade": True,
      "texto": "Do alto do promontório de Ponta Negra, onde fica o farol, se avista a curvatura da Terra."},
     {"id": "mar_leste", "col": 62, "linha": 15, "titulo": "Mar do Centro", "curiosidade": True,
      "texto": "Maricá é reconhecida como Capital Estadual da Pesca Artesanal. A tradição dos pescadores segue viva."},
-    {"id": "farol", "col": 58, "linha": 13, "titulo": "Farol de Ponta Negra", "farol": True},
-    {"id": "farol", "col": 59, "linha": 13, "titulo": "Farol de Ponta Negra", "farol": True},
+    {"id": "farol", "col": 14, "linha": 7, "titulo": "Farol de Ponta Negra", "farol": True},
+    {"id": "farol", "col": 15, "linha": 7, "titulo": "Farol de Ponta Negra", "farol": True},
 ]
 objetos = [("casa_palha_1", 4, 9), ("casa_palha_2", 8, 9), ("casa_palha_1", 4, 22), ("casa_palha_2", 10, 23),
-           ("casa_palha_1", 52, 12), ("casa_palha_2", 55, 17), ("torre_azul", 58, 13),
+           ("casa_palha_1", 52, 12), ("casa_palha_2", 55, 17), ("torre_azul", 14, 7),
+           ("casa_palha_1", 24, 23), ("casa_palha_2", 48, 7), ("casa_palha_1", 58, 26),
+           ("casa_palha_1", 57, 12), ("casa_palha_2", 59, 12), ("casa_palha_1", 40, 26),
+           ("pedra_1", 2, 5), ("pedra_2", 3, 5), ("pedra_3", 4, 5), ("pedra_1", 3, 6),
            ("pedra_2", 14, 27), ("pedra_1", 29, 24), ("pedra_3", 34, 28), ("pedra_2", 53, 25),
            ("placa_seta", 11, 16), ("placa_seta", 18, 16), ("placa_seta", 42, 16)]
 pedras = ["pedra_1", "pedra_2", "pedra_3"]
@@ -130,21 +187,44 @@ ocupado = {(o[1], o[2]) for o in objetos} | {(c + 1, l) for t, c, l in objetos i
 ocupado |= {(b["col"], b["linha"]) for b in barreiras}
 perto = [(n[4], n[5]) for n in NPCS] + [(p["col"], p["linha"]) for p in POIS] + [(9, 19)] + [(n["col"], n["linha"]) for n in CONVERSA + BOSSES]
 rng = random.Random(7)
-livres = [(c, r) for r in range(3, 31) for c in range(2, 62) if g[r][c] == "G" and (c, r) not in ocupado
-          and not (16 <= c <= 26 and 12 <= r <= 21) and not (40 <= c <= 50 and 12 <= r <= 21)
-          and all(abs(c - a) + abs(r - b) > 2 for a, b in perto)
-          and not (c in (53, 54, 56, 57) and 9 <= r <= 18)]
-rng.shuffle(livres)
-for i, (c, r) in enumerate(livres[:75]):
-    objetos.append((rng.choice(["arbusto_1", "arbusto_2", "arbusto_3"]) if i % 6 else rng.choice(pedras), c, r))
+faixas_objetos = ((2, 20, 16), (24, 33, 17), (34, 42, 18), (48, 61, 24))
+for regiao, (ini, fim, quantidade) in enumerate(faixas_objetos):
+    livres = [(c, r) for r in range(3, 31) for c in range(ini, fim + 1)
+              if g[r][c] == "G" and (c, r) not in ocupado
+              and (c + 1, r) not in ocupado and all(abs(c - a) + abs(r - b) > 2 for a, b in perto)]
+    rng.shuffle(livres)
+    for i, (c, r) in enumerate(livres[:quantidade]):
+        arbusto = rng.choice(["arbusto_1", "arbusto_2", "arbusto_3"])
+        tipo = (rng.choice(pedras) if regiao in (0, 2) and i % 2 == 0
+                else rng.choice(pedras) if regiao == 1 and i % 4 == 0
+                else rng.choice(pedras) if regiao == 3 and i % 5 == 0
+                else arbusto)
+        objetos.append((tipo, c, r))
+        ocupado.add((c, r))
+
+celulas_bloqueadas = ocupado | {(n[4], n[5]) for n in NPCS}
+celulas_bloqueadas |= {(n["col"], n["linha"]) for n in CONVERSA + BOSSES}
 
 dados = {
     "nome": "Maricá (protótipo)",
     "linhas": ["".join(l) for l in g],
     "inicio": [9, 19],
     "zonas": [{"nome": "Ponta Negra", "col_ini": 0, "col_fim": 21},
-              {"nome": "Lagoas e Costões", "col_ini": 22, "col_fim": 45},
-              {"nome": "Centro e Farol", "col_ini": 46, "col_fim": 63}],
+              {"nome": "Araçatiba", "col_ini": 22, "col_fim": 33},
+              {"nome": "Espraiado", "col_ini": 34, "col_fim": 45},
+              {"nome": "Centro", "col_ini": 46, "col_fim": 63}],
+    "agua_laguna": [{"col": c, "linha": r}
+                    for r in range(7, 20) for c in range(26, 40) if g[r][c] == "A"],
+    "revestimentos": (
+        [{"tipo": "morro_verde", "col": c, "linha": r}
+         for c, r in sorted(morros_espraiado) if (c, r) not in celulas_bloqueadas]
+        + [{"tipo": "calcada_pedra", "col": c, "linha": r}
+         for c, r in sorted(orla) if 22 <= c <= 33 and (c, r) not in celulas_bloqueadas]
+        + [{"tipo": "trilha_terra", "col": c, "linha": r}
+           for c, r in sorted(trilha_espraiado) if 34 <= c <= 45 and (c, r) not in celulas_bloqueadas]
+        + [{"tipo": "calcada_pedra", "col": c, "linha": r}
+           for c, r in sorted(ruas_centro) if (c, r) not in celulas_bloqueadas]
+    ),
     "objetos": [{"tipo": t, "col": c, "linha": l} for t, c, l in objetos] + barreiras,
     "npcs": [dict(zip(("id", "nome", "folha", "tom", "col", "linha", "dir", "fase", "pergunta", "fala", "papel"),
                       n + ("guia",) * (11 - len(n)))) for n in NPCS],
@@ -169,7 +249,7 @@ while fila:
 proibidos = {(p["col"], p["linha"]) for p in POIS} | bloq | {m.inicio}
 areia = [q for q in sorted(visto) if m.terreno(*q) == "S" and q not in proibidos]
 conchas = []
-for k, (ini, fim) in enumerate(((0, 21), (22, 45), (46, 63))):    # 5 conchas por região, na areia
+for k, (ini, fim) in enumerate(((0, 21), (22, 45), (46, 63))):    # 5 conchas por fase
     cand = [q for q in areia if ini <= q[0] <= fim and not (19 <= q[0] <= 23 or 43 <= q[0] <= 47)]
     rng.shuffle(cand)
     conchas += [{"id": f"concha_{k + 1}_{i + 1}", "col": c, "linha": l} for i, (c, l) in enumerate(cand[:5])]

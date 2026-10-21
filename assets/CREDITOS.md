@@ -1,6 +1,8 @@
 # Créditos e licenças dos assets
 - `personagens/` – **Tiny Neighbours Vol. 1**, por Vryell (@Vryell). Paleta "rosy 42" de @PineTreePizza.
 - `mundo/` – pack **Tiny Swords** (arquivos tiny-swords-XX.png).
+- `mundo/calcada_pedra.png` e `mundo/trilha_terra.png` – recortes de piso do pack `seamless-64px-rpg-tiles`, fornecido no projeto. A pasta do pack não inclui informação de autoria ou licença; os direitos permanecem com os respectivos autores.
+- `mundo/agua_mar.png`, `mundo/agua_lagoa.png` e `mundo/morro_verde.png` – texturas de água e terreno elevado do pack `seamless-64px-rpg-tiles`; autoria/licença não informadas na pasta recebida.
 - `bike/bike_color.png` – sprite original da bicicleta, criado para este jogo.
 - `bike/bike_upperdown.jpg` – folha original com vistas frontal e traseira da bicicleta.
 - `bike/bike_vertical.png` – versão recortada com transparência e quadros alinhados para uso no jogo.

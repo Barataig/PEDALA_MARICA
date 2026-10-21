@@ -4,6 +4,12 @@ import pygame
 from src.core.config import TILE
 from src.world.autotile import escolher_celula
 
+REVESTIMENTOS = {
+    "calcada_pedra": "mundo/calcada_pedra.png",
+    "trilha_terra": "mundo/trilha_terra.png",
+    "morro_verde": "mundo/morro_verde.png",
+}
+
 
 def _camada(sup, mapa, celulas, terrenos):
     def presente(c, l):
@@ -20,10 +26,16 @@ def _camada(sup, mapa, celulas, terrenos):
 
 def montar_superficie_chao(mapa, recursos):
     sup = pygame.Surface((mapa.largura_px, mapa.altura_px))
-    agua = recursos.imagem("mundo/agua.png")
+    agua_mar = recursos.imagem("mundo/agua_mar.png")
+    agua_lagoa = recursos.imagem("mundo/agua_lagoa.png")
+    tiles_lagoa = {(p["col"], p["linha"]) for p in mapa.dados.get("agua_laguna", [])}
     for l in range(mapa.altura):
         for c in range(mapa.largura):
-            sup.blit(agua, (c * TILE, l * TILE))
+            textura = agua_lagoa if (c, l) in tiles_lagoa else agua_mar
+            sup.blit(textura, (c * TILE, l * TILE))
     _camada(sup, mapa, recursos.terreno("areia"), {"S", "G"})   # areia por baixo
     _camada(sup, mapa, recursos.terreno("grama"), {"G"})        # grama por cima
+    for revestimento in mapa.dados.get("revestimentos", []):
+        imagem = recursos.imagem(REVESTIMENTOS[revestimento["tipo"]])
+        sup.blit(imagem, (revestimento["col"] * TILE, revestimento["linha"] * TILE))
     return sup

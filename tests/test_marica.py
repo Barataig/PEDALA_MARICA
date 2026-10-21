@@ -38,6 +38,41 @@ def test_cinco_npcs_por_fase_e_perguntas_unicas(mapa):
     assert len(ids) == len(set(ids))
 
 
+def test_mapa_representa_quatro_bairros_com_npcs(mapa):
+    zonas = mapa.dados["zonas"]
+    assert [z["nome"] for z in zonas] == ["Ponta Negra", "Araçatiba", "Espraiado", "Centro"]
+    assert zonas[0]["col_ini"] == 0 and zonas[-1]["col_fim"] == mapa.largura - 1
+    assert all(a["col_fim"] + 1 == b["col_ini"] for a, b in zip(zonas, zonas[1:]))
+    for zona in zonas:
+        assert any(zona["col_ini"] <= n["col"] <= zona["col_fim"] for n in mapa.dados["npcs"])
+
+
+def test_farol_em_ponta_negra_e_lagoa_com_contorno_variado(mapa):
+    farol = [p for p in mapa.dados["pois"] if p["id"] == "farol"]
+    torre = next(o for o in mapa.dados["objetos"] if o["tipo"] == "torre_azul")
+    assert len(farol) == 2 and all(p["col"] < 22 for p in farol)
+    assert torre["col"] < 22
+    assert mapa.terreno(27, 12) == "A"
+    assert mapa.terreno(25, 12) != "A"
+    assert mapa.terreno(27, 10) == "A" and mapa.terreno(26, 10) != "A"
+
+
+def test_revestimentos_visuais_diferenciam_orla_trilhas_e_centro(mapa):
+    revestimentos = mapa.dados["revestimentos"]
+    assert {"calcada_pedra", "trilha_terra", "morro_verde"} <= {r["tipo"] for r in revestimentos}
+    assert any(22 <= r["col"] <= 33 for r in revestimentos)
+    assert any(34 <= r["col"] <= 45 and r["tipo"] == "trilha_terra" for r in revestimentos)
+    assert any(r["col"] >= 46 and r["tipo"] == "calcada_pedra" for r in revestimentos)
+    assert any(34 <= r["col"] <= 45 and r["tipo"] == "morro_verde" for r in revestimentos)
+    assert all(mapa.caminhavel(r["col"], r["linha"]) for r in revestimentos)
+
+
+def test_lagoa_tem_textura_distinta_e_mantem_agua_no_terreno(mapa):
+    lagoa = mapa.dados["agua_laguna"]
+    assert len(lagoa) > 100
+    assert all(mapa.terreno(p["col"], p["linha"]) == "A" for p in lagoa)
+
+
 @pytest.mark.skipif(not BANCO.exists(), reason="coloque o banco em data/perguntas.json")
 def test_npcs_apontam_para_perguntas_existentes(mapa):
     verificar_npcs(mapa.dados["npcs"], carregar_perguntas(BANCO))

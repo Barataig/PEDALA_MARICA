@@ -17,6 +17,8 @@ Implementado e testado em `src/systems/pontuacao.py`.
 - As 12 perguntas restantes viraram reservas: cada guia (12 deles) tem uma 2ª pergunta e, a cada nova tentativa, usa a próxima.
 - Regra nova (pedido do dono): só passa de região com >= 3 acertos de 5 (`MINIMO_ACERTOS`). Menos que isso: a fase recomeça, o recorde fica. Substitui a regra do GDD "libera ao concluir".
 - Conchas (15 na areia + 6 de presente): H na pergunta elimina 1 alternativa errada. Tecla C abre o caderno.
+- O mapa mantém 3 fases e 3 passagens de progressão, mas organiza visualmente quatro bairros: Ponta Negra, Araçatiba, Espraiado e Centro. A representação é adaptada à grade do jogo, não um mapa geograficamente preciso.
+- Revestimentos visuais do mapa usam calçada de pedra em Araçatiba e no Centro, trilha sinuosa em Espraiado e textura de terreno elevado nas encostas. Mar e lagoa têm texturas próprias; essas camadas não alteram colisões.
 
 - Chefões (pedido do dono): um por região, cada um com uma dinâmica diferente; precisam de >= 3 acertos nos guias para serem enfrentados. O selo e a passagem agora saem ao vencer o chefão. O Farol final é a caça ao lugar (110 s).
 
