@@ -110,7 +110,7 @@ class Conversa:
         if nome:
             img = self.f.render(nome, True, ESCURO)
             pygame.draw.rect(tela, DESTAQUE, (x, y, img.get_width() + 24, 36), border_radius=8)
-            tela.blit(img, (x + 10, y + 2))
+            tela.blit(img, (x + 10, y + 8))
 
     def _texto(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=28):
         fonte = fonte or self.f
@@ -130,7 +130,7 @@ class Conversa:
         if self._linhas is None:
             self._linhas = quebrar(it["texto"], self.f, 860)
         restante = int(self.t * CARACTERES_POR_SEGUNDO)
-        y = 472
+        y = 485
         for l in self._linhas[:5]:
             tela.blit(self.f.render(l[:max(restante, 0)], True, BORDA), (48, y))
             restante -= len(l) + 1
