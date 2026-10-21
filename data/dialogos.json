@@ -1,0 +1,137 @@
+{
+  "npcs": {
+    "nair": {
+      "fala": "Eu guardo a memória do povoado. Deixa eu te contar um pouco da nossa história antes do teste:"
+    },
+    "marta": {
+      "fala": "Como professora, adoro ensinar sobre a nossa terra! Preste bastante atenção:"
+    },
+    "beto": {
+      "fala": "Maricá tem uma história rica que começou como freguesia e depois vila. Olha só:"
+    },
+    "cleide": {
+      "fala": "Ponta Negra guarda construções e memórias fascinantes! Veja que interessante:"
+    },
+    "davi": {
+      "fala": "Eu moro pertinho do farol e conheço bem a história dele. Deixa eu te explicar:"
+    },
+    "tati": {
+      "fala": "Maricá recebeu visitas históricas de grandes cientistas e exploradores. Olha só:"
+    },
+    "rui": {
+      "fala": "Como biólogo, estudo nossas lagoas e canais. Vou te explicar como o sistema funciona:"
+    },
+    "ana": {
+      "fala": "Como geóloga, estudo as formações rochosas do nosso litoral. Veja só que curiosidade:"
+    },
+    "jorge": {
+      "fala": "Como pescador, conheço cada detalhe da nossa costa e das pedras da praia. Veja bem:"
+    },
+    "zefa": {
+      "fala": "Temos movimentos muito importantes para valorizar e proteger nossas riquezas naturais. Veja:"
+    },
+    "lu": {
+      "fala": "Aqui no comércio a gente valoriza muito a economia solidária da cidade. Deixa eu te explicar:"
+    },
+    "wellington": {
+      "fala": "Nosso transporte público tem uma história e proposta bem especiais. Veja só:"
+    },
+    "vera": {
+      "fala": "Trabalho com as finanças e com a moeda social de Maricá. Olha como ela funciona:"
+    },
+    "maria": {
+      "fala": "Minha família sempre viveu da pesca na lagoa. Nossa tradição tem muito valor. Escute só:"
+    },
+    "caca": {
+      "fala": "Aprendi com os mestres caiçaras antigos saberes valiosos do nosso litoral. Preste atenção:"
+    },
+    "dalva": {
+      "falas": [
+        "Sou de Ponta Negra de berço. Aqui o povo diz que o farol guia quem vem do mar.",
+        "Dica de pedaleira: as placas e as pedras guardam curiosidades. Quem lê, acerta mais!"
+      ]
+    },
+    "tonho": {
+      "falas": [
+        "Pedra que parece areia colada é coisa antiga: o mar já esteve mais baixo por aqui.",
+        "Se errar uma pergunta, não desanima. Pra passar de região você precisa acertar pelo menos 3 de 5."
+      ]
+    },
+    "bia": {
+      "falas": [
+        "Eu vivo pedalando pelas lagoas. Esse sistema lagunar é um dos maiores complexos de águas salobras do estado.",
+        "Procure conchas na areia! Cada uma vale uma ajuda nas perguntas."
+      ]
+    },
+    "gil": {
+      "falas": [
+        "Eu estudo o Geoparque Costões e Lagunas. A ideia é proteger e mostrar as rochas e paisagens da região.",
+        "Se um guia falar de rochas ou de Darwin, escute com atenção!"
+      ]
+    },
+    "rita": {
+      "falas": [
+        "No Centro o povo cuida do povo: a cidade tem moeda social e ônibus sem tarifa.",
+        "Olha o prédio do museu ali: já foi cadeia, no tempo colonial!"
+      ]
+    },
+    "tiao": {
+      "falas": [
+        "Já ouvi muita lenda por aqui: Boitatá, lobisomem em noite de lua cheia...",
+        "Dizem que tem tesouro escondido na Pedra de Itaocaia. Vai ver é só história de pescador!"
+      ]
+    }
+  },
+  "pois": {
+    "placa_tupis": {
+      "titulo": "Placa: Primeiros moradores",
+      "texto": "Antes dos portugueses, povos tupis já ocupavam o litoral de Maricá, por volta do século XI."
+    },
+    "quilombo": {
+      "titulo": "Pedra do Quilombo",
+      "texto": "Escravizados fugitivos formaram o Quilombo de Maricá nas matas, por volta de 1812. Foi um reduto de resistência."
+    },
+    "portao1": {
+      "titulo": "Placa: Passagem",
+      "texto": "Mata fechada! A passagem para as Lagoas só abre com o Selo das Raízes. Fale com os 5 guias de Ponta Negra.",
+      "texto_ok": "A passagem está aberta. Siga para leste, rumo às Lagoas e Costões!"
+    },
+    "canal": {
+      "titulo": "Pedra do Canal",
+      "texto": "O Canal de Ponta Negra foi escavado em 1951 para ligar o sistema lagunar ao mar, renovar as águas e aliviar enchentes."
+    },
+    "itaocaia": {
+      "titulo": "Pedra de Itaocaia",
+      "texto": "Dizem que guardiões invisíveis protegem um tesouro escondido na pedra de Itaocaia. Lenda ou verdade? Ninguém sabe."
+    },
+    "portao2": {
+      "titulo": "Placa: Passagem",
+      "texto": "Mata fechada! O caminho do Centro só abre com o Selo das Águas. Fale com os 5 guias das Lagoas.",
+      "texto_ok": "A passagem está aberta. O Centro e o Farol ficam a leste!"
+    },
+    "museu": {
+      "titulo": "Casa de Cultura",
+      "texto": "O prédio do Museu Histórico já foi a Casa de Câmara e Cadeia, no tempo colonial."
+    },
+    "colonia": {
+      "titulo": "Pedra da Colônia",
+      "texto": "Os pescadores artesanais de Maricá se organizam na Colônia de Pescadores Z-7 para defender sua tradição."
+    },
+    "lagoa": {
+      "titulo": "Lagoa de Maricá",
+      "texto": "O Sistema Lagunar Maricá-Guarapina reúne as lagoas Brava, de Maricá, da Barra, do Padre e Guarapina: águas salobras, entre o rio e o mar."
+    },
+    "mar_ponta": {
+      "titulo": "O mar de Ponta Negra",
+      "texto": "Do alto do promontório de Ponta Negra, onde fica o farol, se avista a curvatura da Terra."
+    },
+    "mar_leste": {
+      "titulo": "Mar do Centro",
+      "texto": "Maricá é reconhecida como Capital Estadual da Pesca Artesanal. A tradição dos pescadores segue viva."
+    },
+    "farol": {
+      "titulo": "Farol de Ponta Negra"
+    }
+  }
+}
+

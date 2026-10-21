@@ -563,7 +563,6 @@
    "dir": "direita",
    "fase": 0,
    "pergunta": null,
-   "fala": "",
    "papel": "mentor"
   },
   {
@@ -576,7 +575,6 @@
    "dir": "baixo",
    "fase": 1,
    "pergunta": "hist_002",
-   "fala": "Eu guardo a memória do povoado. Vamos ver se você sabe como tudo começou?",
    "papel": "guia",
    "extras": [
     "hist_001"
@@ -592,7 +590,6 @@
    "dir": "esquerda",
    "fase": 1,
    "pergunta": "hist_003",
-   "fala": "Dou aula sobre o nome da nossa terra. Uma perguntinha pra você!",
    "papel": "guia",
    "extras": [
     "hist_006"
@@ -608,7 +605,6 @@
    "dir": "cima",
    "fase": 1,
    "pergunta": "hist_004",
-   "fala": "Maricá já foi só uma freguesia, sabia? Me diga o que você sabe da vila.",
    "papel": "guia",
    "extras": [
     "hist_005"
@@ -624,7 +620,6 @@
    "dir": "direita",
    "fase": 1,
    "pergunta": "patr_003",
-   "fala": "Já viu a capela de Ponta Negra? Tem um jeitão bem diferente!",
    "papel": "guia",
    "extras": [
     "patr_001"
@@ -640,7 +635,6 @@
    "dir": "esquerda",
    "fase": 1,
    "pergunta": "patr_004",
-   "fala": "Eu moro pertinho do farol! Aposto que você não sabe a data dele.",
    "papel": "guia",
    "extras": [
     "patr_002"
@@ -656,7 +650,6 @@
    "dir": "baixo",
    "fase": 2,
    "pergunta": "pers_001",
-   "fala": "Um visitante ilustre passou por aqui anotando tudo sobre a natureza. Lembra quem?",
    "papel": "guia",
    "extras": [
     "pers_002"
@@ -672,7 +665,6 @@
    "dir": "baixo",
    "fase": 2,
    "pergunta": "nat_004",
-   "fala": "Essas águas salobras são o coração da cidade. Você conhece o conjunto?",
    "papel": "guia",
    "extras": [
     "nat_001"
@@ -688,7 +680,6 @@
    "dir": "esquerda",
    "fase": 2,
    "pergunta": "nat_002",
-   "fala": "As rochas do costão são das mais antigas que existem. Chute a idade!",
    "papel": "guia"
   },
   {
@@ -701,7 +692,6 @@
    "dir": "cima",
    "fase": 2,
    "pergunta": "nat_003",
-   "fala": "Na praia tem pedra que parece feita de areia colada. Sabe o nome?",
    "papel": "guia"
   },
   {
@@ -714,7 +704,6 @@
    "dir": "esquerda",
    "fase": 2,
    "pergunta": "nat_005",
-   "fala": "Estão lutando pra proteger essas pedras todas. Sabe qual é o projeto?",
    "papel": "guia",
    "extras": [
     "trad_004"
@@ -730,7 +719,6 @@
    "dir": "baixo",
    "fase": 3,
    "pergunta": "econ_001",
-   "fala": "Aqui na loja a gente aceita a moeda da cidade. Sabe de onde vem o nome dela?",
    "papel": "guia",
    "extras": [
     "econ_003"
@@ -746,7 +734,6 @@
    "dir": "baixo",
    "fase": 3,
    "pergunta": "econ_004",
-   "fala": "Eu dirijo um ônibus que não cobra passagem! Sabe como chamam eles?",
    "papel": "guia",
    "extras": [
     "trad_003"
@@ -762,7 +749,6 @@
    "dir": "direita",
    "fase": 3,
    "pergunta": "econ_002",
-   "fala": "Faço as contas da moeda social. Quanto vale cada uma?",
    "papel": "guia"
   },
   {
@@ -775,7 +761,6 @@
    "dir": "esquerda",
    "fase": 3,
    "pergunta": "cult_002",
-   "fala": "Meu marido pescava na lagoa. A cidade ganhou um título por causa disso!",
    "papel": "guia",
    "extras": [
     "cult_001"
@@ -791,7 +776,6 @@
    "dir": "cima",
    "fase": 3,
    "pergunta": "trad_001",
-   "fala": "Aprendi com os antigos o ofício de marcar a areia. Sabe pra que servia?",
    "papel": "guia",
    "extras": [
     "trad_002"
@@ -805,10 +789,6 @@
    "col": 8,
    "linha": 13,
    "dir": "baixo",
-   "falas": [
-    "Sou de Ponta Negra de berço. Aqui o povo diz que o farol guia quem vem do mar.",
-    "Dica de pedaleira: as placas e as pedras guardam curiosidades. Quem lê, acerta mais!"
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -820,10 +800,6 @@
    "col": 11,
    "linha": 21,
    "dir": "esquerda",
-   "falas": [
-    "Pedra que parece areia colada é coisa antiga: o mar já esteve mais baixo por aqui.",
-    "Se errar uma pergunta, não desanima. Pra passar de região você precisa acertar pelo menos 3 de 5."
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -835,10 +811,6 @@
    "col": 26,
    "linha": 5,
    "dir": "baixo",
-   "falas": [
-    "Eu vivo pedalando pelas lagoas. Esse sistema lagunar é um dos maiores complexos de águas salobras do estado.",
-    "Procure conchas na areia! Cada uma vale uma ajuda nas perguntas."
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -850,10 +822,6 @@
    "col": 35,
    "linha": 22,
    "dir": "cima",
-   "falas": [
-    "Eu estudo o Geoparque Costões e Lagunas. A ideia é proteger e mostrar as rochas e paisagens da região.",
-    "Se um guia falar de rochas ou de Darwin, escute com atenção!"
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -865,10 +833,6 @@
    "col": 54,
    "linha": 10,
    "dir": "baixo",
-   "falas": [
-    "No Centro o povo cuida do povo: a cidade tem moeda social e ônibus sem tarifa.",
-    "Olha o prédio do museu ali: já foi cadeia, no tempo colonial!"
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -880,10 +844,6 @@
    "col": 51,
    "linha": 15,
    "dir": "direita",
-   "falas": [
-    "Já ouvi muita lenda por aqui: Boitatá, lobisomem em noite de lua cheia...",
-    "Dizem que tem tesouro escondido na Pedra de Itaocaia. Vai ver é só história de pescador!"
-   ],
    "papel": "conversa",
    "fase": 0
   },
@@ -926,112 +886,84 @@
    "id": "placa_tupis",
    "col": 11,
    "linha": 16,
-   "titulo": "Placa: Primeiros moradores",
-   "curiosidade": true,
-   "texto": "Antes dos portugueses, povos tupis já ocupavam o litoral de Maricá, por volta do século XI."
+   "curiosidade": true
   },
   {
    "id": "quilombo",
    "col": 14,
    "linha": 27,
-   "titulo": "Pedra do Quilombo",
-   "curiosidade": true,
-   "texto": "Escravizados fugitivos formaram o Quilombo de Maricá nas matas, por volta de 1812. Foi um reduto de resistência."
+   "curiosidade": true
   },
   {
    "id": "portao1",
    "col": 18,
    "linha": 16,
-   "titulo": "Placa: Passagem",
-   "fase": 1,
-   "texto": "Mata fechada! A passagem para as Lagoas só abre com o Selo das Raízes. Fale com os 5 guias de Ponta Negra.",
-   "texto_ok": "A passagem está aberta. Siga para leste, rumo às Lagoas e Costões!"
+   "fase": 1
   },
   {
    "id": "canal",
    "col": 29,
    "linha": 24,
-   "titulo": "Pedra do Canal",
-   "curiosidade": true,
-   "texto": "O Canal de Ponta Negra foi escavado em 1951 para ligar o sistema lagunar ao mar, renovar as águas e aliviar enchentes."
+   "curiosidade": true
   },
   {
    "id": "itaocaia",
    "col": 34,
    "linha": 28,
-   "titulo": "Pedra de Itaocaia",
-   "curiosidade": true,
-   "texto": "Dizem que guardiões invisíveis protegem um tesouro escondido na pedra de Itaocaia. Lenda ou verdade? Ninguém sabe."
+   "curiosidade": true
   },
   {
    "id": "portao2",
    "col": 42,
    "linha": 16,
-   "titulo": "Placa: Passagem",
-   "fase": 2,
-   "texto": "Mata fechada! O caminho do Centro só abre com o Selo das Águas. Fale com os 5 guias das Lagoas.",
-   "texto_ok": "A passagem está aberta. O Centro e o Farol ficam a leste!"
+   "fase": 2
   },
   {
    "id": "museu",
    "col": 52,
    "linha": 12,
-   "titulo": "Casa de Cultura",
-   "curiosidade": true,
-   "texto": "O prédio do Museu Histórico já foi a Casa de Câmara e Cadeia, no tempo colonial."
+   "curiosidade": true
   },
   {
    "id": "museu",
    "col": 53,
    "linha": 12,
-   "titulo": "Casa de Cultura",
-   "curiosidade": true,
-   "texto": "O prédio do Museu Histórico já foi a Casa de Câmara e Cadeia, no tempo colonial."
+   "curiosidade": true
   },
   {
    "id": "colonia",
    "col": 53,
    "linha": 25,
-   "titulo": "Pedra da Colônia",
-   "curiosidade": true,
-   "texto": "Os pescadores artesanais de Maricá se organizam na Colônia de Pescadores Z-7 para defender sua tradição."
+   "curiosidade": true
   },
   {
    "id": "lagoa",
    "col": 27,
    "linha": 12,
-   "titulo": "Lagoa de Maricá",
-   "curiosidade": true,
-   "texto": "O Sistema Lagunar Maricá-Guarapina reúne as lagoas Brava, de Maricá, da Barra, do Padre e Guarapina: águas salobras, entre o rio e o mar."
+   "curiosidade": true
   },
   {
    "id": "mar_ponta",
    "col": 8,
    "linha": 31,
-   "titulo": "O mar de Ponta Negra",
-   "curiosidade": true,
-   "texto": "Do alto do promontório de Ponta Negra, onde fica o farol, se avista a curvatura da Terra."
+   "curiosidade": true
   },
   {
    "id": "mar_leste",
    "col": 62,
    "linha": 15,
-   "titulo": "Mar do Centro",
-   "curiosidade": true,
-   "texto": "Maricá é reconhecida como Capital Estadual da Pesca Artesanal. A tradição dos pescadores segue viva."
+   "curiosidade": true
   },
   {
    "id": "farol",
    "col": 58,
    "linha": 13,
-   "titulo": "Farol de Ponta Negra",
    "farol": true
   },
   {
    "id": "farol",
    "col": 59,
    "linha": 13,
-   "titulo": "Farol de Ponta Negra",
    "farol": true
   }
  ],
