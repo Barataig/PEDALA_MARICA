@@ -48,8 +48,10 @@ class CenaMundo(Cena):
         self.dialogos = json.loads((DATA / "dialogos.json").read_text(encoding="utf-8")) if (DATA / "dialogos.json").exists() else {}
         self.perguntas = carregar_perguntas(DATA / "perguntas.json")
         verificar_npcs(dados.get("npcs", []), self.perguntas)
-        self.progresso = Progresso(None if WEB else DATA / "save.json")
+        self.progresso = Progresso(None if WEB else (getattr(jogo, "save_path", None) or DATA / "save.json"),
+                                     getattr(jogo, "player_name", "") or "Ciclista")
         self.progresso.carregar()
+        self.jogo.player_name = self.progresso.nome_jogador
         for f in FASES:
             if f"boss_{f}" in self.progresso.bosses:
                 self.mapa.liberar(f)
@@ -86,7 +88,7 @@ class CenaMundo(Cena):
         self.entrada = EntradaDirecional()
         self.fonte, self.fonte_p = carregar_fonte(28), carregar_fonte(22)
         self.conversa = Conversa(self.fonte, self.fonte_p)
-        self.hud_fundo = pygame.Surface((372, 104), pygame.SRCALPHA)
+        self.hud_fundo = pygame.Surface((372, 120), pygame.SRCALPHA)
         self.hud_fundo.fill((24, 41, 56, 205))
         self.bike, self.debug = False, False
         self._seguir_jogador()
@@ -359,8 +361,8 @@ class CenaMundo(Cena):
                 pygame.draw.circle(tela, OURO, centro, 10)
             pygame.draw.circle(tela, (247, 247, 242), centro, 10, 2)
         self._texto(tela, f"Pontos: {p.placar.total}   Conchas: {p.conchas}", (124, 24))
-        self._texto(tela, self._zona(), (22, 52), self.fonte_p, OURO)
-        self._texto(tela, f"Caderno {len(p.curiosidades)}/{self.total_curiosidades}", (260, 52), self.fonte_p)
+        self._texto(tela, f"Jogador: {p.nome_jogador} · {self._zona()}", (22, 52), self.fonte_p, OURO)
+        self._texto(tela, f"Caderno {len(p.curiosidades)}/{self.total_curiosidades}", (22, 74), self.fonte_p)
         f = self._fase_atual()
         if "final" in p.bosses:
             obj = "Missão cumprida: o Farol está aceso!"
@@ -372,7 +374,7 @@ class CenaMundo(Cena):
             obj = f"Fase {f}: enfrente o chefão!"
         else:
             obj = f"Fase {f}: guias {p.respondidas(f)}/{PERGUNTAS_POR_FASE}"
-        self._texto(tela, obj, (22, 78), self.fonte_p)
+        self._texto(tela, obj, (22, 96), self.fonte_p)
 
     def _hud_caca(self, tela):
         if not self.caca:
