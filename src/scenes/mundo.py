@@ -69,6 +69,7 @@ class CenaMundo(Cena):
         self.chao = montar_superficie_chao(self.mapa, rec)
         self.jogador = Jogador(*self.mapa.inicio, direcao=Direcao.CIMA)
         self.folha = rec.personagem(JOGADOR_FOLHA, JOGADOR_TOM)
+        self.bicicleta = rec.bicicleta()
         self.sombra = rec.sombra()
         self.camera = Camera(LARGURA, ALTURA, self.mapa.largura_px, self.mapa.altura_px)
         self.entrada = EntradaDirecional()
@@ -391,7 +392,15 @@ class CenaMundo(Cena):
         px, py = j.posicao_pixels()
         sx, sy = round(px) - ox, round(py) - oy
         tela.blit(self.sombra, (sx + 10, sy + TILE - 22))
-        itens.append((py + TILE, self.folha.quadro(j.direcao, j.andando, j.tempo_anim), (sx, sy + DESLOC_SPRITE_Y)))
+        if self.bike:
+            bike = self.bicicleta.quadro(j.andando, j.tempo_anim, j.direcao)
+            if j.direcao in (Direcao.CIMA, Direcao.BAIXO):
+                posicao_bike = (sx + (TILE - bike.get_width()) // 2, sy)
+            else:
+                posicao_bike = (sx, sy + TILE * 3 // 8)
+            itens.append((py + TILE, bike, posicao_bike))
+        sprite = self.folha.quadro(j.direcao, j.andando, j.tempo_anim)
+        itens.append((py + TILE, sprite, (sx, sy + DESLOC_SPRITE_Y)))
         itens.sort(key=lambda i: i[0])
         area = tela.get_rect()
         for _, img, pos in itens:

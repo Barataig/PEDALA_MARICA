@@ -100,6 +100,6 @@ python -m pytest
 | _Nome 4_ | _ex.: testes, README e publicação_ |
 
 ## 6. Limitações conhecidas
-- Mapa e torre-farol são provisórios. A bicicleta ainda não tem sprite (só anda mais rápido).
+- Mapa e torre-farol são provisórios.
 - Terreno sem "cantos internos": formas côncavas mostram pequenas falhas nas quinas.
 - Publicação no navegador (Pygbag) ainda não foi testada.
