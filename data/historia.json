@@ -1,0 +1,69 @@
+{
+ "zeca": {
+  "missao": [
+   "Ei, ciclista! Eu sou o Seu Zeca, riscador da barra aqui de Ponta Negra. Meu povo sempre marcou na areia onde a lagoa devia abrir pro mar.",
+   "O Farol de Ponta Negra está apagado desde a última ressaca. Só quem conhece de verdade a história de Maricá consegue reacendê-lo.",
+   "Pedale pelas três regiões. Cada região tem 5 guias, e cada guia faz uma pergunta. Acerte pelo menos 3 de 5 para enfrentar o chefão da região: vencendo, você ganha o Selo e a passagem abre.",
+   "Leia as placas e as pedras: elas guardam curiosidades que ajudam. Chegue perto, olhe de frente e aperte E. E aperte B para subir na bicicleta!",
+   "Comece por aqui, em Ponta Negra. Quando tiver o primeiro selo, a mata fechada do corredor leste se abre. Boa pedalada!"
+  ],
+  "andamento": "Você está na Fase {fase}: {nome}. Já falou com {feitas} de {total} guias. Lembre: para passar de região, acerte pelo menos 3 de 5. {dica}",
+  "completo": [
+   "O Farol está aceso! Você é mesmo do tipo que pedala e aprende.",
+   "Se quiser, pode refazer uma fase para bater seu recorde."
+  ],
+  "refazendo": "Combinado! Os guias da Fase {fase} vão te perguntar tudo de novo. Seu recorde fica guardado.",
+  "chefe": "Você passou nas perguntas da Fase {fase}! Agora enfrente o chefão: {chefe}. {onde}",
+  "farol": "Os três chefões caíram! Vá ao Farol, no extremo leste, e enfrente a Ressaca."
+ },
+ "ja_respondeu": "Já conversamos! Siga em frente: ainda tem muita gente com história pra contar.",
+ "fases": [
+  {
+   "nome": "Ponta Negra: Raízes",
+   "selo": "Selo das Raízes",
+   "dica": "Procure quem tem o símbolo ! em cima da cabeça, por toda a vila.",
+   "conclusao": [
+    "Primeiro selo no bolso! A mata fechada do corredor leste abriu. Siga para as lagoas."
+   ],
+   "onde": "Ele te espera junto à passagem, no corredor leste."
+  },
+  {
+   "nome": "Lagoas e Costões: Natureza",
+   "selo": "Selo das Águas",
+   "dica": "Contorne a lagoa: tem guias ao norte, ao sul e na beira do costão.",
+   "conclusao": [
+    "Dois selos! O corredor mais a leste abriu. Lá fica o Centro, onde vive a gente de Maricá."
+   ],
+   "onde": "Ela te espera junto à passagem, mais a leste."
+  },
+  {
+   "nome": "Centro: Gente e Tradições",
+   "selo": "Selo do Povo",
+   "dica": "No Centro, a economia e as tradições estão em cada esquina.",
+   "conclusao": [
+    "Três selos! Agora corra ao Farol, no extremo leste, e reacenda a luz de Maricá."
+   ],
+   "onde": "Ele te espera perto do Farol, no Centro."
+  }
+ ],
+ "farol_apagado": "O farol está apagado. Para enfrentar a Ressaca, derrote os três chefões das regiões.",
+ "farol_aceso": "Os três selos brilham na sua mão e o Farol de Ponta Negra se acende! A luz cruza a lagoa e chega ao mar.\nVocê fez {total} de {maximo} pontos. Título: {rank}.",
+ "ranks": [
+  [
+   1500,
+   "Guardião(ã) de Maricá"
+  ],
+  [
+   1000,
+   "Ciclista Explorador(a)"
+  ],
+  [
+   500,
+   "Aprendiz da Memória"
+  ],
+  [
+   0,
+   "Visitante Curioso(a)"
+  ]
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "nome": "Ponta Negra (mapa de teste)",
+ "linhas": [
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSSSSSSSSGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSAAAAAASGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSAAAAAASGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSAAAAAASGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSAAAAAASGGG",
+  "GGGGGGGGGGGGGGGGGGGGGSSSSSSSSGGG",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "GGGGGGGGGGGGGGGGGGGGGGGGGSSSSSSS",
+  "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+  "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+  "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+ ],
+ "inicio": [
+  12,
+  11
+ ],
+ "objetos": [
+  {
+   "tipo": "casa_palha_1",
+   "col": 4,
+   "linha": 7
+  },
+  {
+   "tipo": "casa_palha_2",
+   "col": 9,
+   "linha": 7
+  },
+  {
+   "tipo": "torre_azul",
+   "col": 27,
+   "linha": 11
+  },
+  {
+   "tipo": "arbusto_3",
+   "col": 2,
+   "linha": 4
+  },
+  {
+   "tipo": "arbusto_2",
+   "col": 14,
+   "linha": 5
+  },
+  {
+   "tipo": "arbusto_1",
+   "col": 16,
+   "linha": 11
+  },
+  {
+   "tipo": "arbusto_3",
+   "col": 7,
+   "linha": 12
+  },
+  {
+   "tipo": "pedra_2",
+   "col": 10,
+   "linha": 15
+  },
+  {
+   "tipo": "pedra_3",
+   "col": 18,
+   "linha": 16
+  },
+  {
+   "tipo": "placa_seta",
+   "col": 12,
+   "linha": 9
+  }
+ ]
+}
