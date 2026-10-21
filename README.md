@@ -90,7 +90,7 @@ python -m pytest
 **Adicionar perguntas:** acrescente ao `data/perguntas.json` (mesmo formato), ponha o id em `EXTRAS` em
 `tools/gerar_mapa.py` e rode `python tools/gerar_mapa.py`.
 
-## 5. Divisão de tarefas — _[PREENCHER]_
+## 5. Divisão de tarefas 
 
 | Integrante | Responsabilidade |
 |---|---|
