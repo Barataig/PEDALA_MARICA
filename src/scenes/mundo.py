@@ -180,7 +180,7 @@ class CenaMundo(Cena):
     def _caderno(self):
         p = self.progresso
         rec = " · ".join(f"F{f} {p.placar.melhor(f)}" for f in FASES)
-        resumo = (f"Selos: {sum(f"boss_{f}" in p.bosses for f in FASES)}/{TOTAL_FASES}. Recordes: {rec}. "
+        resumo = (f"Selos: {sum(f'boss_{f}' in p.bosses for f in FASES)}/{TOTAL_FASES}. Recordes: {rec}. "
                   f"Conchas: {p.conchas}. Curiosidades: {len(p.curiosidades)}/{self.total_curiosidades}.")
         itens = self._falas("Caderno", [resumo])
         vistos = {poi["id"]: poi for poi in self.pois.values() if poi["id"] in p.curiosidades}
