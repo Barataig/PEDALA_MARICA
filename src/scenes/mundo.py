@@ -88,7 +88,7 @@ class CenaMundo(Cena):
         self.entrada = EntradaDirecional()
         self.fonte, self.fonte_p = carregar_fonte(28), carregar_fonte(22)
         self.conversa = Conversa(self.fonte, self.fonte_p)
-        self.hud_fundo = pygame.Surface((372, 120), pygame.SRCALPHA)
+        self.hud_fundo = pygame.Surface((450, 150), pygame.SRCALPHA)
         self.hud_fundo.fill((24, 41, 56, 205))
         self.bike, self.debug = False, False
         self._seguir_jogador()
@@ -360,9 +360,9 @@ class CenaMundo(Cena):
             if f"boss_{f}" in p.bosses:
                 pygame.draw.circle(tela, OURO, centro, 10)
             pygame.draw.circle(tela, (247, 247, 242), centro, 10, 2)
-        self._texto(tela, f"Pontos: {p.placar.total}   Conchas: {p.conchas}", (124, 24))
-        self._texto(tela, f"Jogador: {p.nome_jogador} · {self._zona()}", (22, 52), self.fonte_p, OURO)
-        self._texto(tela, f"Caderno {len(p.curiosidades)}/{self.total_curiosidades}", (22, 74), self.fonte_p)
+        self._texto(tela, f"Pontos: {p.placar.total}   Conchas: {p.conchas}", (124, 10))
+        self._texto(tela, f"Jogador: {p.nome_jogador} · {self._zona()}", (22, 50), self.fonte_p, OURO)
+        self._texto(tela, f"Caderno {len(p.curiosidades)}/{self.total_curiosidades}", (22, 84), self.fonte_p)
         f = self._fase_atual()
         if "final" in p.bosses:
             obj = "Missão cumprida: o Farol está aceso!"
@@ -374,7 +374,7 @@ class CenaMundo(Cena):
             obj = f"Fase {f}: enfrente o chefão!"
         else:
             obj = f"Fase {f}: guias {p.respondidas(f)}/{PERGUNTAS_POR_FASE}"
-        self._texto(tela, obj, (22, 96), self.fonte_p)
+        self._texto(tela, obj, (22, 115), self.fonte_p)
 
     def _hud_caca(self, tela):
         if not self.caca:
@@ -427,10 +427,10 @@ class CenaMundo(Cena):
                 tela.blit(img, pos)
         for n in self.npcs:     # "!" em quem ainda tem pergunta para você
             if n.papel == "guia" and not self.progresso.ja_respondeu(n.fase, n.id):
-                self._texto(tela, "!", (n.col * TILE - ox + 28, n.linha * TILE - oy - 22), self.fonte, OURO)
+                self._texto(tela, "!", (n.col * TILE - ox + 28, n.linha * TILE - oy - 45), self.fonte, OURO)
         for n in self.npcs:     # chefões ainda não derrotados
             if n.papel == "chefe" and n.id not in self.progresso.bosses:
-                self._texto(tela, "CHEFÃO", (n.col * TILE - ox - 4, n.linha * TILE - oy - 22), self.fonte_p, (235, 110, 100))
+                self._texto(tela, "CHEFÃO", (n.col * TILE - ox - 4, n.linha * TILE - oy - 45), self.fonte_p, (235, 110, 100))
         self._hud(tela)
         self._hud_caca(tela)
         if self.aviso[1] > 0:
