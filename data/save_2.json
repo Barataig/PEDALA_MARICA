@@ -1,0 +1,24 @@
+{
+ "melhores": [
+  0,
+  0,
+  0
+ ],
+ "concluidas": [
+  false,
+  false,
+  false
+ ],
+ "intro_vista": true,
+ "respostas": {
+  "1": {},
+  "2": {},
+  "3": {}
+ },
+ "curiosidades": [],
+ "tentativas": {},
+ "bosses": [],
+ "conchas": 0,
+ "conchas_coletadas": [],
+ "nome_jogador": "davi"
+}

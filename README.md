@@ -13,7 +13,7 @@ e aprende conversando com moradores (NPCs guias), lendo placas e enfrentando che
 
 **Como o jogo funciona**
 - Seu Zeca pede que você reacenda o Farol de Ponta Negra.
-- São 3 regiões (Ponta Negra, Lagoas e Costões, Centro), com 5 guias por região. Cada guia faz 1 pergunta.
+- São 3 fases de exploração, com 5 guias por fase. O mapa distingue quatro bairros: Ponta Negra, Araçatiba, Centro e Espraiado.
 - Com **3 ou mais acertos em 5**, libera-se o **chefão** da região. Com menos, a fase recomeça e os guias trocam de pergunta.
 - Vencer o chefão dá o **Selo** e abre a passagem. Com os 3 selos, o Farol final propõe uma caça ao lugar contra o relógio.
 - Toda resposta vem com **explicação** e **fonte**. Placas e pedras dão curiosidades, que ficam no caderno.
