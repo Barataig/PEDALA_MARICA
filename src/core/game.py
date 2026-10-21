@@ -6,6 +6,7 @@ import pygame
 from src.core.assets import Recursos
 from src.core.config import ALTURA, FPS, LARGURA, TITULO, WEB
 from src.scenes.titulo import CenaTitulo
+from src.scenes.mundo import CenaMundo
 
 
 class Game:
@@ -22,9 +23,16 @@ class Game:
         while self.rodando:
             dt = min(self.relogio.tick(FPS) / 1000, 0.05)   # limita saltos (ex.: janela arrastada)
             for ev in pygame.event.get():
-                if ev.type == pygame.QUIT or (
-                        ev.type == pygame.KEYDOWN and ev.key == pygame.K_ESCAPE and not WEB):
+                if ev.type == pygame.QUIT:
                     self.rodando = False
+                elif ev.type == pygame.KEYDOWN and ev.key == pygame.K_ESCAPE:
+                    if isinstance(self.cena, CenaMundo):
+                        # Retorna ao menu sem apagar o progresso salvo.
+                        self.cena = CenaTitulo(self)
+                    elif not WEB:
+                        self.rodando = False
+                    else:
+                        self.cena.processar_evento(ev)
                 else:
                     self.cena.processar_evento(ev)
             self.cena.atualizar(dt)
