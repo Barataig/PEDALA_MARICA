@@ -110,7 +110,7 @@ class Conversa:
         if nome:
             img = self.f.render(nome, True, ESCURO)
             pygame.draw.rect(tela, DESTAQUE, (x, y, img.get_width() + 24, 36), border_radius=8)
-            tela.blit(img, (x + 12, y + 8))
+            tela.blit(img, (x + 10, y + 2))
 
     def _texto(self, tela, linhas, x, y, cor=BORDA, fonte=None, passo=28):
         fonte = fonte or self.f
@@ -126,7 +126,7 @@ class Conversa:
 
     def _fala(self, tela, it):
         self._painel(tela, pygame.Rect(24, 456, 912, 164))
-        self._etiqueta(tela, it.get("nome"), 44, 428)
+        self._etiqueta(tela, it.get("nome"), 44, 440)
         if self._linhas is None:
             self._linhas = quebrar(it["texto"], self.f, 860)
         restante = int(self.t * CARACTERES_POR_SEGUNDO)
