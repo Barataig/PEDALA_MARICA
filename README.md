@@ -94,10 +94,10 @@ python -m pytest
 
 | Integrante | Responsabilidade |
 |---|---|
-| _Nome 1_ | _ex.: mundo, mapa e colisão_ |
-| _Nome 2_ | _ex.: perguntas, pontuação e conteúdo_ |
-| _Nome 3_ | _ex.: chefões e interface_ |
-| _Nome 4_ | _ex.: testes, README e publicação_ |
+| Carol | _ex.: mundo, mapa e colisão_ |
+| Davi | _ex.: perguntas, pontuação e conteúdo_ |
+| Igor | _ex.: chefões e interface_ |
+| Gabriel | _ex.: testes, README e publicação_ |
 
 ## 6. Limitações conhecidas
 - Mapa e torre-farol são provisórios.
