@@ -18,6 +18,7 @@ class Pergunta:
     explicacao: str
     fonte_titulo: str
     fonte_url: str
+    ensino: str = ""
 
 
 def carregar_perguntas(caminho):
@@ -35,7 +36,8 @@ def carregar_perguntas(caminho):
             alts = tuple(q["alternativas"])
             p = Pergunta(q["id"], q.get("categoria", ""), q.get("dificuldade", ""), q["pergunta"], alts,
                          q["resposta_correta"], q["explicacao"],
-                         q.get("fonte", {}).get("titulo", ""), q.get("fonte", {}).get("url", ""))
+                         q.get("fonte", {}).get("titulo", ""), q.get("fonte", {}).get("url", ""),
+                         q.get("ensino", ""))
         except KeyError as e:
             raise ErroPerguntas(f"Pergunta {q.get('id', '?')} sem o campo {e}.") from e
         if len(alts) < 2 or not 0 <= p.correta < len(alts):
