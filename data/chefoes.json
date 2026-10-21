@@ -1,0 +1,65 @@
+{
+ "boss_1": {
+  "intro": ["Eu sou o Guardião da Memória! Guardo os anos de Maricá. Se você sabe a ordem das coisas, a passagem é sua.",
+            "Em cada rodada, escolha o que aconteceu PRIMEIRO entre os cartões que sobraram. Três erros e a memória se embaralha!"],
+  "trancado": "Ainda não. Converse com os guias de Ponta Negra e acerte pelo menos 3 de 5 para me enfrentar.",
+  "ja_venceu": "Você já provou que conhece o tempo de Maricá. Siga em frente!",
+  "vitoria": ["Impressionante! Você domina a linha do tempo de Maricá."],
+  "derrota": "A memória se embaralhou... Releia as placas, converse com o Seu Zeca e tente de novo.",
+  "desafio": {"tipo": "tempo", "titulo": "Linha do Tempo", "vidas": 3, "rodadas": [
+   [{"chave": 1050, "texto": "Povos tupis ocupam o litoral", "rotulo": "século XI"},
+    {"chave": 1574, "texto": "Começa o povoamento luso, com doação de sesmarias", "rotulo": "1574"},
+    {"chave": 1814, "texto": "O povoado vira a Vila de Santa Maria de Maricá", "rotulo": "1814"},
+    {"chave": 1909, "texto": "Inauguração do Farol de Ponta Negra", "rotulo": "1909"}],
+   [{"chave": 1812, "texto": "Organiza-se o Quilombo de Maricá", "rotulo": "por volta de 1812"},
+    {"chave": 1832, "texto": "Charles Darwin explora a região", "rotulo": "1832"},
+    {"chave": 1951, "texto": "Escavação do Canal de Ponta Negra", "rotulo": "1951"},
+    {"chave": 1964, "texto": "A Estrada de Ferro Maricá é desativada", "rotulo": "1964"},
+    {"chave": 2015, "texto": "Tarifa Zero nos ônibus: nascem os Vermelhinhos", "rotulo": "2015"}]]}
+ },
+ "boss_2": {
+  "intro": ["Eu sou a Senhora das Lagoas! Cuido de cada pedra e de cada gota destas águas.",
+            "Escolha um item e depois o fato que combina com ele. Três pares errados e as águas te levam de volta!"],
+  "trancado": "Ainda não. Converse com os guias das Lagoas e Costões e acerte pelo menos 3 de 5 para me enfrentar.",
+  "ja_venceu": "As águas já te conhecem. Siga para o Centro!",
+  "vitoria": ["As águas se acalmaram. Você ligou cada segredo ao seu lugar!"],
+  "derrota": "As águas te levaram de volta... Releia as placas e as pedras e tente de novo.",
+  "desafio": {"tipo": "pares", "titulo": "Ligar Pares", "vidas": 3, "rodadas": [
+   [{"a": "Costão de Ponta Negra", "b": "Rochas de cerca de 2,1 bilhões de anos"},
+    {"a": "Beachrocks de Jaconé", "b": "Areia e conchas cimentadas, com 8 mil anos"},
+    {"a": "Canal de Ponta Negra", "b": "Liga as lagoas ao mar e alivia enchentes"},
+    {"a": "Sistema Maricá-Guarapina", "b": "Lagoas Brava, de Maricá, da Barra, do Padre e Guarapina"}],
+   [{"a": "Geoparque Costões e Lagunas", "b": "Projeto que busca reconhecimento da UNESCO"},
+    {"a": "Pedra de Itaocaia", "b": "Lenda de tesouro guardado por guardiões"},
+    {"a": "Espinheiro-maricá", "b": "Árvore que deu nome à cidade"},
+    {"a": "HMS Beagle", "b": "Navio da expedição de Darwin"}]]}
+ },
+ "boss_3": {
+  "intro": ["Sssss! Sou o Boitatá, a serpente de fogo que cuida das matas. Só passa quem separa o mito da verdade!",
+            "Leia cada frase e diga: Verdade ou Mito? São 8 frases, e você tem 3 vidas."],
+  "trancado": "Ainda não. Converse com os guias do Centro e acerte pelo menos 3 de 5 para me enfrentar.",
+  "ja_venceu": "Você enxerga além das chamas. O caminho do Farol é seu!",
+  "vitoria": ["Sssss... você separou o mito da verdade. As chamas se apagam."],
+  "derrota": "Ssss... o fogo te confundiu. Converse com o povo do Centro e tente de novo.",
+  "desafio": {"tipo": "mito", "titulo": "Mito ou Verdade", "vidas": 3, "afirmacoes": [
+   {"texto": "A Moeda Mumbuca vale 1 real.", "verdade": true, "explicacao": "Cada Mumbuca equivale a 1 real."},
+   {"texto": "A Moeda Mumbuca pode ser usada em qualquer cidade do país.", "verdade": false, "explicacao": "Ela só é aceita em comércios e serviços de Maricá, o que mantém a riqueza na cidade."},
+   {"texto": "Os ônibus de tarifa zero de Maricá são chamados de Vermelhinhos.", "verdade": true, "explicacao": "A cor padronizada deu o apelido aos ônibus gratuitos."},
+   {"texto": "O nome Mumbuca vem de uma antiga moeda dos engenhos de cana.", "verdade": false, "explicacao": "A moeda homenageia o Rio Mumbuca, onde o idealizador pescava na juventude."},
+   {"texto": "Maricá é a Capital Estadual da Pesca Artesanal.", "verdade": true, "explicacao": "O título reconhece a importância dos pescadores e das lagoas."},
+   {"texto": "Pela lenda de Bambuí, o lobisomem ataca em noites de lua nova.", "verdade": false, "explicacao": "A lenda fala em encruzilhadas nas noites de lua cheia."},
+   {"texto": "O Boitatá é uma serpente de fogo que protege as matas.", "verdade": true, "explicacao": "A lenda conta que ele pune quem queima e destrói as florestas."},
+   {"texto": "Os riscadores da barra marcavam o ponto onde abrir a lagoa para o mar.", "verdade": true, "explicacao": "Eles usavam o saber da experiência para marcar o local no cordão de areia."}]}
+ },
+ "final": {
+  "tempo": 110,
+  "intro": ["As águas da Ressaca engoliram a luz do farol! Para acendê-la, reencontre três lugares da memória de Maricá e volte aqui antes que o tempo acabe.",
+            "Leia a pista, vá até o lugar, fique de frente e aperte E. A bicicleta (B) ajuda!"],
+  "pistas": [
+   {"alvo": "canal", "pista": "Pista 1: ache a pedra que conta do canal escavado em 1951, nas Lagoas.", "ok": "Isso! O canal ligou o sistema lagunar ao mar."},
+   {"alvo": "placa_tupis", "pista": "Pista 2: volte a Ponta Negra e leia a placa dos primeiros moradores.", "ok": "Isso! Os tupis já estavam aqui por volta do século XI."},
+   {"alvo": "museu", "pista": "Pista 3: no Centro, ache o prédio que já foi Casa de Câmara e Cadeia.", "ok": "Isso! Hoje é a Casa de Cultura e Museu Histórico."},
+   {"alvo": "farol", "pista": "Última pista: volte ao Farol e acenda a luz!", "ok": ""}],
+  "derrota": "O tempo acabou e a Ressaca engoliu a luz outra vez. Fale com o farol para tentar de novo!"
+ }
+}
